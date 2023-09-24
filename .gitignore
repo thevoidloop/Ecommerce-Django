@@ -1,0 +1,23 @@
+# Archivos de configuración
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*~
+
+# Archivos de la base de datos
+*.sqlite3
+
+# Archivos de claves secretas
+secrets.json
+
+# Archivos del entorno virtual
+venv/
+ENV/
+
+# Archivos de la IDE
+.idea/
+.vscode/
+
+# Archivos temporales
+*.tmp
