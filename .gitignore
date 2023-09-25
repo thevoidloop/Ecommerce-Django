@@ -5,8 +5,6 @@ __pycache__/
 *.pyd
 *~
 
-# Archivos de la base de datos
-*.sqlite3
 
 # Archivos de claves secretas
 secrets.json
