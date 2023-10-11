@@ -7,8 +7,11 @@
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg">
     <div class="container">
-        <h2 class="title-page">Our Store</h2>
-        
+        {%  if 'search' in request.path %}
+            <h2 class="title-page">Resultado de la búsqueda</h2>
+        {% else %}
+            <h2 class="title-page">Nuestra Tienda</h2>
+        {% endif %}
     </div> <!-- container //  -->
     </section>
 <!-- ========================= SECTION INTRO END// ========================= -->
@@ -94,12 +97,13 @@
     
     <header class="border-bottom mb-4 pb-3">
             <div class="form-inline">
-                <span class="mr-md-auto"><b>{{ product_count }}</b> items found </span>
+                <span class="mr-md-auto"><b>{{ product_count }}</b> Artículos encontrados </span>
 
             </div>
     </header><!-- sect-heading -->
     
     <div class="row">
+        {% if products %}
         {% for product in products %}
         <div class="col-md-4">
             <figure class="card card-product-grid">
@@ -120,6 +124,11 @@
             </figure>
         </div> <!-- col.// -->
         {% endfor %}
+        {% else %}
+        <div> 
+            <h2>No se ha encontrado ningún resultado. Intente nuevamente.</h2>
+        </div>
+        {% endif %}
     </div> <!-- row end.// -->
     
     
