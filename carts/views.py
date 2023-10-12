@@ -92,7 +92,7 @@ def remove_cart(request, product_id, cart_item_id):
         pass
     return redirect('cart')
 
-
+#remove cart
 def remove_cart_item(request, product_id, cart_item_id):
 
     cart = Cart.objects.get(cart_id=_cart_id(request))
