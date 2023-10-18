@@ -52,9 +52,13 @@ def payments(request):
         orderproduct.save()
 
 
-    #Reduce the quantity of sold producto
-
+        #Reduce the quantity of sold producto
+        product = Product.objects.get(id=item.product_id)
+        product.stock -= item.quantity
+        product.save()
     #Clear cart
+
+    CartItem.objects.filter(user=request.user).delete()
 
     #Send order recieved email to customer
 
