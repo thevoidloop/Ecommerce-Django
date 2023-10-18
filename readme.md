@@ -38,5 +38,5 @@ python3 manage.py runserver
 ## Authors
 
 - [@Daniel Marroquin](https://github.com/thevoidloop)
-- [@Melvin Torres](https://github.com/thevoidloop)
-- [@Alejandro Caal](https://github.com/thevoidloop)
+- [@Melvin Torres](https://github.com/Melvin3107)
+- [@Alejandro Caal](https://github.com/alejoca7)
