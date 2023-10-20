@@ -74,17 +74,12 @@
         <div class="row">
                                 <div class="col-md-9">
         
-                <header class="section-heading">
-                        <h3>Customer Reviews </h3>  
-                        
-                </header>
-        
-                <form action="" method="POST">
+                <form action="{% url 'submit_review' single_product.id %}" method="POST">
                   {% csrf_token %}
                   <h5> Escribe tu opinión</h5>
                   <div>
                       <!-- Rating stors-->
-                      <label>How do you rate this product?</label>
+                      <label>¿Cómo valoras este producto?</label>
                       <br>
                       <div class="rate">
                         <input type="radio" name="rating" id="rating10" values="5" required /><label for="rating10" title="5"></label>
@@ -105,12 +100,19 @@
                       Reseña:
                       <textarea name="review" rows="4" class="form-control"></textarea>
                       <br>
-                      <input tyoe="submit" value="Enviar Reseña" class="btn btn-primary">
-                      <br>
+                      {% if user.is_authenticated %}
+                      <input type="submit" value="Submit Review" class="btn btn-primary">
+                      {% else %}
+                      <p>Debes iniciar sesión para publicar una reseña. <span> <a href="{% url 'login' %}">Iniciar sesión ahora</a></span></p>
+                      {% endif %}
                 </div>
-
+{% include 'includes/alerts.html' %}
                 </form>
-                <br>
+        <br>
+        <header class="section-heading">
+        <h3>Opiniones de los clientes </h3>  
+
+        </header>
                 <article class="box mb-3">
                         <div class="icontext w-100">
                                 <img src="{% static './images/avatars/avatar1.jpg' %}" class="img-xs icon rounded-circle">
