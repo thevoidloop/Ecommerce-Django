@@ -12,10 +12,14 @@ secrets.json
 
 # Archivos del entorno virtual
 env/
-
+.env
 # Archivos de la IDE
 .idea/
 .vscode/
 
 # Archivos temporales
 *.tmp
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
