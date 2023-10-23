@@ -32,7 +32,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = [django-greatkart-env.eba-4ex2hxpp.us-west-2.elasticbeanstalk.com]
+ALLOWED_HOSTS = ['django-greatkart-env.eba-4ex2hxpp.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -96,7 +96,6 @@ AUTH_USER_MODEL = 'accounts.Account'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 # Database Configuration
-import os
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
